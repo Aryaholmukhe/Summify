@@ -55,5 +55,5 @@ Through the first-hand pain of a student sitting through long audio and video co
 - We also want to give our users the ability to do any file uploads directly on Summify
 - In the future, we want to enable direct audio or video input right from redirected sources like Spotify, Youtube, and more.
 
-## Built With
+## Built With 🦾
 HTML, CSS, JavaScript, Conversation Intelligence, Artificial Intelligence, Figma, Symbl.ai and API
