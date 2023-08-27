@@ -18,7 +18,7 @@ Summify’s video summarization feature supports mp4.
 ## How we built it
 - Since our team consisted of mostly beginners in web development, we decided to use pure js/html/css for our project without any fancy frameworks so that we were all able to work on the solution.
 
-- SUmmify was built using various softwares found through our own research that include:
+- Summify was built using various softwares found through our own research that include:
   - For Front-End: HTML and CSS
   - For Back-End: JavaScript, Symbl.ai API, and Conversation Intelligence
   - For Website Design Mockup: Figma
