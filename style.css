@@ -1,0 +1,287 @@
+/*******************Import*******************/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Poppins:wght@400;600;700;900&family=Roboto+Mono&display=swap');
+
+/********************* Main *********************/
+html, body {
+  margin: 0;
+  padding: 0;
+    /* height: 100vh; */
+    width: 100vw;
+    background-color:#6f93e6;
+    font-family: 'Poppins', sans-serif;
+    color: #283453;
+    overflow-x: hidden;
+  }
+
+
+/********************* Useful Features *********************/
+
+.center{
+  text-align: center;
+}
+
+.summify{
+  font-family: 'ADLaM Display', cursive;
+  font-size: 5vw;
+  padding: 0;
+  margin: 0;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+input{
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+  background-color: #e6c26f;
+  padding: 2%;
+  border-radius: 5px;
+  margin: 4% 1%;
+}
+
+/********************* Home Page *********************/
+
+.homeDiv{
+    background-color: #ffffff4d;
+  /* Center vertically and horizontally */
+  border: 0.5px solid #B5FFE1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;  
+  border-radius: 5px;
+  width: 50vw;
+  height: 50vh;
+  padding: 2% 7%;
+  box-shadow: rgba(0, 0, 0, 0.301) 0px 10px 50px;
+}
+
+.green{
+  width: 95vw;
+  height: 70px;
+  position: absolute;
+top: 50%;
+left: 0;  
+transform: skewY(20deg);
+filter: blur(200px);
+z-index: -1;
+opacity: 70%;
+}
+.orange{
+  width: 60vw;
+  height: 90px;
+  position: absolute;
+left: 0;  
+transform: skewY(-30deg);
+filter: blur(200px);
+z-index: -2;
+}
+.pink{
+  width: 20vw;
+  height: 90px;
+  position: absolute;
+top: 80%;
+right: 0%;  
+transform: skewY(-20deg);
+filter: blur(200px);
+z-index: -3;
+}
+
+/********************* Video page *********************/
+
+/********************* Audio page *********************/
+.sentiment{
+  padding-left: 5px;
+}
+.process{
+  background-color: #e6c26f;
+  padding: 1% 2%;
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.inputProcess{
+  padding: 1% 2%;
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.inputContainer{
+  /* margin: 5%; */
+  padding: 5%;
+}
+
+/* Style the tab */
+.output_tabs {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #E6C26F;
+}
+
+/* Style the buttons inside the tab */
+.output_tabs button {
+  background-color: #E6C26F;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.output_tabs button:hover {
+  background-color: #c9aa61;
+}
+
+/* Create an active/current tablink class */
+.output_tabs button.active {
+  background-color: #283453;
+  color: #c9aa61;
+}
+
+/* Style the tab content */
+.output_tab {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #f1f1f1b2;
+}
+
+/*Style Loader*/
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: "none";
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/********************* Team *********************/
+  
+/* Three columns side by side */
+.team_members {
+  /* float: left;  */
+  /* width: 33.3%; */
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .team_members {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.team_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.team_container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.team_container::after, .team_mates::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.team_mates{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 50vw  ; */
+  height: 50vh;
+  display: flex;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  /* width: 100%; */
+}
+.pfp{
+  width: 100px;
+  height: 100px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+  .homeDiv{
+  width: 80vw;
+  height: 70vh;
+  
+}
+.summify{
+font-size: 10vw;
+}
+}
+
+ /* nav bar */
+
+.active{
+  color: #1c3467;
+}
+
+nav{
+  padding: 1rem;
+  background-color: #283453;
+}
+.logo{
+  font-size:2rem;
+  color: #e6c26f !important;
+  text-decoration:none;
+  font-weight:700;
+  font-family: 'ADLaM Display', cursive;
+  position: absolute;
+  right: 2%;
+}
+
+.navbar a{
+  font-size: 100%;
+  color:white;
+  font-weight:500;
+  text-decoration:none;
+  margin: 0 2rem;
+}
+
+/* ******* Footer ******* */
+.footer{
+  background-color: #283453;
+  text-align: center;
+  padding: 2rem;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  color: #c9aa61;
+}

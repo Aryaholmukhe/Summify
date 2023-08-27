@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Audio Tester</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+ 
+</head>
+
+<body>
+
+  <!--Get Audio from URL-->
+  <p>Current ConversationID:
+  <p id="converID"></p>
+  </p>
+  <form id="audioURLForm">
+    <input id="audioURLInput" type="url" placeholder="Audio Link" />
+    <a href="/test.html"></a>
+    <button id="audioURLSubmit" type="submit">Submit</button>
+  </form>
+
+  <form id="videoURLForm">
+    <input id="videoURLInput" type="url" placeholder="Video Link" />
+    <a href="/test.html"></a>
+    <button id="videoURLSubmit" type="submit">Submit</button>
+  </form>
+
+  <button onClick="getURLSummary()">Get Summary</button>
+  <p>Returned Summary:
+  <p id="summary"></p>
+  </p>
+
+  <button onClick="getURLMessage()">Get Message</button>
+  <p>Returned Messages:
+  <ul id="message">
+  </ul>
+  </p>
+
+  <button onClick="getURLTopic()">Get Topic</button>
+  <p>Returned Topics:
+  <p id="topic"></p>
+  <p id="sentiment"></p>
+  </p>
+
+    <button onClick="getURLQuestion()">Get Question</button>
+  <p>Returned Questions:
+  <p id="question"></p>
+  </p>
+
+  <!-- Get Video from URL
+  <form id="videoURLForm">
+    <input type="file" accept="video/*">
+    <input id="videoURLInput" type="url" placeholder="Video Link"/> 
+    <a href="/test.html"></a>
+    <button id="videoURLSubmit" type="submit">Submit</button>
+  </form>
+
+  <button onClick="getVideoURLSummary()">Get Summary</button>
+  <p>Returned Summary: <p id="summary2"></p></p> -->
+
+  <!--Connect to JavaScript File-->
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

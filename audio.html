@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summify</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">SUMMIFY</a>
+        <nav class="navbar">
+            <a href="./index.html">Home</a>
+            <a class="active" href="./audio.html">Audio</a>
+            <a href="./video.html">Video</a>
+            <a href="./team.html">Team</a>
+        </nav>
+    </header>
+
+    <div class="inputContainer">
+        <h1 class="Tab_Header">Summify Your Audio</h1>
+
+        <div class="intructions_block">
+            <h2 class="intructions"> Instructions</h2>
+            <p>Please paste your audio links into the submission box below, then click process. Afterward, click any of
+                the tabs below.<br><br>
+                Supports mp3, wav, amr, aac, ac3, aiff, flac, ogg, opus, wma, and m4a files less than 4 hours long. <br/>
+                <i>The longer the audio, the more time it would take to load</i>
+            </p>
+            <p>
+               <b>If you want to convert an audio file from your computer to link, see <a href="https://www.aconvert.com/audio/" target="_blank">Aconvert.com</a>   </b>  
+            </p>
+        </div>
+
+        <form class="audio_url_submission" id="audioURLForm">
+            <label for="url">Paste Audio URL</label>
+            <input type="url" name="audio_url" id="audioURLInput" placeholder="https://example.mp3"
+                pattern="https://.*" class="inputProcess"/>
+            <input class="bold process" id="audioURLSubmit" type="submit" value="Process">
+        </form>
+
+        <p id="converID"></p>
+        <div class="output">
+            <div class="output_tabs">
+                <button class="tablinks"
+                    onclick="changeTabs(event, 'summarize_tab'); setsummaryInterval()">Summarize</button>
+                <button class="tablinks" onclick="changeTabs(event, 'key_points_tab'); setmessageInterval()">Key
+                    Points</button>
+                <button class="tablinks" onclick="changeTabs(event, 'key_topics_tab'); settopicInterval()">Key
+                    Topics w/ Sentiment</button>
+                <button class="tablinks" onclick="changeTabs(event, 'questions_tab'); setquestionInterval()">Questions
+                    Asked</button>
+            </div>
+
+            <div id="summarize_tab" class="output_tab">
+                <h3>Summarize</h3>
+                <div class="loader" id="loadersummerize" style="display:none;"></div>
+                <p id="summarize_output"></p>
+            </div>
+
+            <div id="key_points_tab" class="output_tab">
+                <h3>Key Points</h3>
+                <div class="loader" id="loaderkeypoint" style="display:none;"></div>
+                <ul id="key_points_output"></ul>
+            </div>
+
+            <div id="key_topics_tab" class="output_tab">
+                <h3>Key Topics wih Sentiment Analysis</h3>
+                <div class="loader" id="loaderkeytopic" style="display:none;"></div>
+                <div class="topic" id="topic">
+                
+                </div>
+            </div>
+
+            <div id="questions_tab" class="output_tab">
+                <h3>Questions</h3>
+                <div class="loader" id="loaderquestion" style="display:none;"></div>
+                <p id="question"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
