@@ -9,6 +9,8 @@
 </head>
 
 <body>
+
+    <!--Navigation Bar-->
     <header class="header">
         <a href="./index.html" class="logo">SUMMIFY</a>
         <nav class="navbar">
@@ -19,6 +21,7 @@
         </nav>
     </header>
 
+    <!--Webpage-->
     <div class="inputContainer">
         <h1 class="Tab_Header">Summify Your Audio</h1>
 
@@ -32,9 +35,11 @@
             <p>
                <b>If you want to convert an audio file from your computer to link, see <a href="https://www.aconvert.com/audio/" target="_blank">Aconvert.com</a>   </b>  
             </p>
-               <p>Here is an example audio link: <a href="https://s19.aconvert.com/convert/p3r68-cdx67/izbvg-zp3uh.mp3" target="_blank">https://s19.aconvert.com/convert/p3r68-cdx67/izbvg-zp3uh.mp3</a></p>
+               <p>Here is two example audio links you can copy to use: <span style="color: blue;" id="linkcopy" onclick="linkCopy()" aria-disabled="true" >https://www2.cs.uic.edu/~i101/SoundFiles/preamble.wav</span></p>
+        
         </div>
 
+        <!--Input URL-->
         <form class="audio_url_submission" id="audioURLForm">
             <label for="url">Paste Audio URL</label>
             <input type="url" name="audio_url" id="audioURLInput" placeholder="https://example.mp3"
@@ -43,6 +48,8 @@
         </form>
 
         <p id="converID"></p>
+
+        <!--Output Summarized Data-->
         <div class="output">
             <div class="output_tabs">
                 <button class="tablinks"
@@ -50,7 +57,7 @@
                 <button class="tablinks" onclick="changeTabs(event, 'key_points_tab'); setmessageInterval()">Key
                     Points</button>
                 <button class="tablinks" onclick="changeTabs(event, 'key_topics_tab'); settopicInterval()">Key
-                    Topics w/ Sentiment</button>
+                    Topics w/ Sentiment Analysis</button>
                 <button class="tablinks" onclick="changeTabs(event, 'questions_tab'); setquestionInterval()">Questions
                     Asked</button>
             </div>

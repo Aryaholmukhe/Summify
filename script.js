@@ -1,5 +1,5 @@
 
-let API_KEY = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJodHRwczovL3BsYXRmb3JtLnN5bWJsLmFpL3VzZXJJZCI6IjU2NDE4NjMwNjAyNTg4MTYiLCJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoiN1RRRGFnNU15QmNrZlEyMlY0ODRRdVk1Y0JRa0t0QzFAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjkzMDkwMDg3LCJleHAiOjE2OTMxNzY0ODcsImF6cCI6IjdUUURhZzVNeUJja2ZRMjJWNDg0UXVZNWNCUWtLdEMxIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.qK-4Gpl-Nxzs_P-K4cin6v1TnmEvnptsS2g_XKWBKM-zlhR6wr8aiHiahOy4CuojvgxNW9Zv3AfVH4MX3dWOytpKY6hzTHn252Srn_x2trmTfUV9uIM4ZchZyAVJIRGv91_r88F2_36c7StQmAPixNRRFHwGT3jOa_MupPoVJ1tZBkVc4L_Jk3H4PPvr7n3EVI29sIVrKNZ8euLWVXqNQZ1r_9GbF1DdxHklP-CSSxFW8zspUYWHZjBW4RWoMWX840Eov-eU2wvLhlwii5ubjJOTXO2vohRjyPsWXl-ABILevNQrdcGsbIl123lfKfIGi5wryFRYzHrN_fxTLZ3WCA";
+let API_KEY = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJodHRwczovL3BsYXRmb3JtLnN5bWJsLmFpL3VzZXJJZCI6IjU0MDkyMzM0NzE1MzcxNTIiLCJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoicFB4YXA5blNOR2gyd25sanlQdGwxSktEQmZSU1RKc1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjkzMTQzNzc4LCJleHAiOjE2OTMyMzAxNzgsImF6cCI6InBQeGFwOW5TTkdoMndubGp5UHRsMUpLREJmUlNUSnNUIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.U6T5lKTKEmoTCu_ow2utP9JpgnYli3hotAOqXxfEU2r-Zuo3TPh17ds55S7qqlwPLUNC-DM_G7fZuYcoTJ_U-IQMqRgRSpep4zG87ucJigtp1mU7Ie50BxW-93Jy-MXVPg9XjVRhiEcqzI-baRxk68xIFfwJ1Wl8dPVdWGZJ9G-YXAAuNFvywsjK6XIGeuyOCL6G3UqH1zU8H_CY7cEF21rV9pSsHowQIRmFlpsHcm0GRmInNss3y7kANx5KOUCRg25XG_QZm0GIn86UBfV4imjRRTffbElmNgoUwkCSm4TPoQm4gDf0nSik0hUH6eTRFyWJ-FqBgs0LU7tQQU0-yw";
 
 /***************************Selection Tabs***************************/
 function changeTabs(evt, cityName) {
@@ -23,15 +23,13 @@ function changeTabs(evt, cityName) {
 /***************************Fetching API***************************/
 
 // get the html elements
-
 let keyPoints = document.getElementById("key_points_output");
 let summaryHtml = document.getElementById("summarize_output");
-// let conversationId = 5088577051688960;
 let conversationId;
 let jobId;
 
-//Set header
 
+//Set header
 const options = {
     method: 'GET',
     headers: {
@@ -46,17 +44,13 @@ document.addEventListener("DOMContentLoaded",
     function () {
         const audioForm = document.getElementById("audioURLForm");
         const audioInput = document.getElementById("audioURLInput");
-        console.log(audioForm)
         audioForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the form from submitting
-            // console.log(audioInput.value)
             const selectedFile = audioInput.value;
             if (selectedFile) {
-                console.log("Selected file:", selectedFile);
                 getAudioURLConverID(selectedFile);
                 // You can perform further actions with the selected file here
             } else {
-                console.log("No file selected");
             }
         });
     }
@@ -70,34 +64,27 @@ document.addEventListener("DOMContentLoaded",
 
         videoForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the form from submitting
-            // console.log(audioInput.value)
             const selectedFile = videoInput.value;
             if (selectedFile) {
-                console.log("Selected Video file:", selectedFile);
                 getVideoURLConverID(selectedFile)
-                // getConversation()
                 // You can perform further actions with the selected file here
             } else {
-                console.log("No file selected");
             }
         });
     }
 );
 
-
+//Get conversationId if it exists
 async function getConversation(){
       
       await fetch('https://api.symbl.ai/v1/conversations/'+conversationId, options)
         .then(response => response.json())
-        .then(response => console.log(response))
         .catch(err => console.error(err));
 }
 
-// let conversationId = 5088577051688960;
 
-
+//Getting conversationId of audio URL
 async function getAudioURLConverID(url_link) {
-    // DONT TOUCH THIS
     const optionsPost = {
         method: 'POST',
         headers: {
@@ -115,23 +102,22 @@ async function getAudioURLConverID(url_link) {
     response = await response.json();
     conversationId = await response["conversationId"];
     jobId = await response["jobId"];
-        // .then(response => response.json())
-        // .then(response => console.log(response))
-        // .then(response => { conversationId = response["conversationId"]; })
-        // .then(response => { jobId = response["jobId"];})
-        // .catch(err => console.error(err));
-    console.log("ConversationID", conversationId)
-    document.getElementById("converID").innerHTML = "ID found. Proceed to the next step.";
+    if (conversationId){
+        document.getElementById("converID").innerHTML = "ID found. Proceed to the next step.";
+    } else {
+        document.getElementById("converID").innerHTML = "ID not found. Please submit file in the correct format.";
+    }
     await getConversation()
 }
 
+//Getting if the job is complete
 async function getJobStatus(){
     response = await fetch('https://api.symbl.ai/v1/job/'+jobId, options)
     response = await response.json()
-    console.log(response.status)
     return response["status"]
 }
 
+//Getting conversationId of video URL
 async function getVideoURLConverID(url_link) {
     // DONT TOUCH THIS
     const optionsPost = {
@@ -150,26 +136,17 @@ async function getVideoURLConverID(url_link) {
     response = await response.json();
     conversationId = await response["conversationId"];
     jobId = await response["jobId"];
-        // .then(response => response.json())
-        // .then(response => { conversationId = response["conversationId"]; })
-        // .catch(err => console.error(err));
-    console.log("ConversationID", conversationId)
-    document.getElementById("converID").innerHTML = "ID found. Proceed to the next step.";
+    if (conversationId){
+        document.getElementById("converID").innerHTML = "ID found. Proceed to the next step.";
+    } else {
+        document.getElementById("converID").innerHTML = "ID not found. Please submit file in the correct format.";
+    }
 }
 
+/******Fetching API for Summary******/
 
-  
-
-//Fetching API for Summary
 let summaryInfo
 async function getSummary(url_link) {
-      
-    // response = await fetch(url_link, options)
-    //     // .then(response => response.json())
-    //     // .then(response => {summaryInfo = response; console.log("summary info has been added")})
-    //     // .catch(err => console.error(err));
-    // summaryInfo = await response.json()
-
     async function fetchJSON(url, options) {
         const response = await fetch(url, options);
         if (!response.ok) {
@@ -178,7 +155,6 @@ async function getSummary(url_link) {
         return response.json();
     }
     summaryInfo = await fetchJSON(url_link, options)
-    console.log("SummaryInfo", summaryInfo);
 }
 
 let summaryInterval
@@ -193,11 +169,11 @@ function setsummaryInterval(){
             selectedFile = URLInput.value;
         }
         
-        if (selectedFile) {
+        if (selectedFile && conversationId) {
             document.getElementById("loadersummerize").style.display = "block";
+            getURLSummary()
             summaryInterval = setInterval(getURLSummary, 5000);
         } else {
-            console.log("No file selected");
         }
     }
 
@@ -205,14 +181,11 @@ async function getURLSummary() {
     let audioSummaryURL = `https://api.symbl.ai/v1/conversations/${conversationId}/summary`;
 
     information = await getSummary(audioSummaryURL);
-    console.log(JSON.stringify(summaryInfo));
     let workingstatus = await getJobStatus();
-    console.log("returned:", getJobStatus());
-
     // Show loader while fetching summary
     document.getElementById("loadersummerize").style.display = "block";
-    
     summaryHtml.innerHTML = "";
+
     if (workingstatus === "in_progress") {
         // Keep the loader visible while the job is in progress
     } else {
@@ -229,8 +202,8 @@ async function getURLSummary() {
     }
 }
 
+/******Fetching API for Key Points******/
 
-//Fetching API for Message
 let messageInfo
 async function getMessage(url_link) {
 
@@ -242,11 +215,6 @@ async function getMessage(url_link) {
         return response.json();
     }
     messageInfo = await fetchJSON(url_link, options)
-    // await fetch(url_link, options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .then(response => { messageInfo = response; console.log("URL IN FETCH", url_link); console.log("Response", response);console.log(messageInfo)})
-    //     .catch(err => console.error(err));
 }
 
 let messageInterval
@@ -260,11 +228,11 @@ function setmessageInterval(){
             URLInput = document.getElementById("audioURLInput");
             selectedFile = URLInput.value;
         }
-        if (selectedFile) {
+        if (selectedFile && conversationId) {
             document.getElementById("loaderkeypoint").style.display = "block";
+            getURLMessage()
             messageInterval = setInterval(getURLMessage, 5000);
         } else {
-            console.log("No file selected");
         }
 }
 
@@ -273,7 +241,6 @@ async function getURLMessage() {
     let audioMessageURL = "https://api.symbl.ai/v1/conversations/" + conversationId + "/messages"
     keyPoints.innerHTML = "";
     information = await getMessage(audioMessageURL)
-    console.log(JSON.stringify(messageInfo))
     document.getElementById("loaderkeypoint").style.display = "block";
     let workingstatus = await getJobStatus();
     if (workingstatus === "in_progress") {
@@ -292,6 +259,8 @@ async function getURLMessage() {
     }
 }
 
+/******Fetching API for Topics w/ Sentiment******/
+
 let topicInfo
 async function getTopic(url_link) {
 
@@ -303,12 +272,6 @@ async function getTopic(url_link) {
         return response.json();
     }
     topicInfo = await fetchJSON(url_link, options)
-
-    // await fetch(url_link, options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .then(response => { topicInfo = response; console.log("URL IN FETCH", url_link); console.log("Response", response);console.log("TopicInfo", topicInfo);})
-    //     .catch(err => console.error(err));
 }
 
 let topicInterval
@@ -322,11 +285,12 @@ function settopicInterval(){
             URLInput = document.getElementById("audioURLInput");
             selectedFile = URLInput.value;
         }
-        if (selectedFile) {
+        if (selectedFile && conversationId) {
             document.getElementById("loaderkeytopic").style.display = "block";
+            getURLTopic()
             topicInterval = setInterval(getURLTopic, 5000);
         } else {
-            console.log("No file selected");
+            
         }
 }
 
@@ -334,15 +298,11 @@ async function getURLTopic() {
 
     let audioTopicURL = "https://api.symbl.ai/v1/conversations/" + conversationId + "/topics?sentiment=true&parentRefs=true";
     
-    // let score = document.getElementById("score")
-    // let sentiment = document.getElementById("sentiment")
     let topic = document.getElementById("topic")
-    // score.innerHTML = ""
-    // sentiment.innerHTML = ""
     topic.innerHTML = "";
     
     information = await getTopic(audioTopicURL)
-    console.log("Topic INFO", JSON.stringify(topicInfo))
+
     
     document.getElementById("loaderkeytopic").style.display = "block";
     let workingstatus = await getJobStatus();
@@ -364,7 +324,7 @@ async function getURLTopic() {
     }
 }
 
-
+/******Fetching API for Questions******/
 
 let questionInfo
 async function getQuestion(url_link) {
@@ -376,11 +336,6 @@ async function getQuestion(url_link) {
         return response.json();
     }
     questionInfo = await fetchJSON(url_link, options)
-    // await fetch(url_link, options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .then(response => {questionInfo = response; console.log("URL IN FETCH", url_link); console.log("Response", questionInfo); })
-    //     .catch(err => console.error(err));
 }
 
 let questionInterval
@@ -394,11 +349,12 @@ function setquestionInterval(){
             URLInput = document.getElementById("audioURLInput");
             selectedFile = URLInput.value;
         }
-        if (selectedFile) {
+        if (selectedFile && conversationId) {
             document.getElementById("loaderquestion").style.display = "block";
+            getURLQuestion()
             questionInterval = setInterval(getURLQuestion, 5000);
         } else {
-            console.log("No file selected");
+
         }
 }
 
@@ -407,7 +363,6 @@ async function getURLQuestion() {
     let audioQuestionURL = "https://api.symbl.ai/v1/conversations/" + conversationId + "/questions"
 
     information = await getQuestion(audioQuestionURL)
-    console.log("Question INFO", JSON.stringify(questionInfo))
     document.getElementById("loaderquestion").style.display = "block";
     let workingstatus = await getJobStatus();
     document.getElementById("question").innerHTML = "";
@@ -429,9 +384,22 @@ async function getURLQuestion() {
 }
 
 //A way to get the summary to show up when we click on the button so that it runs the function directly
-// let summary = document.getElementById("Get Summary")
-// if(summary.addEventListener)
-//   summary.addEventListener('onclick", functionName) 
 
+function htmlDecode(input) {
+    var doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
+  }
 
+function linkCopy() {
+    // Get the text field
+    var copyText = document.getElementById("linkcopy");
+  
+    // // Select the text field
+  
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(htmlDecode(copyText.innerHTML));
+    
+    // Alert the copied text
+    alert("Copied the text: " + htmlDecode(copyText.innerHTML));
+  }
 

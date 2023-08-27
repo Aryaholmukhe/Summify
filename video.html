@@ -7,6 +7,8 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
+    <!--Navigation Bar-->
     <header class="header">
         <a href="#" class="logo">SUMMIFY</a>
         <nav class="navbar">
@@ -17,63 +19,68 @@
         </nav>
     </header>
 
+    <!--Webpage-->
     <div class="inputContainer">
-    <h1 class="Tab_Header">Summify Your Video</h1>
+        <h1 class="Tab_Header">Summify Your Video</h1>
 
-    <div class="intructions_block">
-        <h2 class="intructions"> Instructions</h2>
-        <p>Please paste your video links into the submission box below, then click process. Afterward, click any of
-            the tabs below.<br><br>
-            Only supports mp4 files less than 4 hours long. <br/>
-            <i>The longer the video, the more time it would take to load</i>
-        </p>
-        <p>
-           <b>If you want to convert an video file from your computer to link, see <a href="https://www.aconvert.com/video/" target="_blank">Aconvert.com</a>   </b>  
-        </p>
-           <p>Here is an example video link: <a href="https://dms-exp3.licdn.com/playlist/vid/D5605AQEgieYuRORKWw/mp4-640p-30fp-crf28/0/1691558979300?e=1693706400&v=beta&t=1MKd4EphR88b1WmyAVOFaGIaUHy7-Hy14avqvj-jp28" target="_blank">https://dms-exp3.licdn.com/playlist/vid/D5605AQEgieYuRORKWw/mp4-640p-30fp-crf28/0/1691558979300?e=1693706400&v=beta&t=1MKd4EphR88b1WmyAVOFaGIaUHy7-Hy14avqvj-jp28</a></p>
-    </div>
+        <div class="intructions_block">
+            <h2 class="intructions"> Instructions</h2>
+            <p>Please paste your video links into the submission box below, then click process. Afterward, click any of
+                the tabs below.<br><br>
+                Only supports mp4 files less than 4 hours long. <br/>
+                <i>The longer the video, the more time it would take to load</i>
+            </p>
+            <p>
+            <b>If you want to convert an video file from your computer to link, see <a href="https://www.aconvert.com/video/" target="_blank">Aconvert.com</a>   </b>  
+            </p>
+            <p>Here is an example audio link you can copy to use: <span style="color: blue;" id="linkcopy" onclick="linkCopy()" aria-disabled="true" >https://dms-exp3.licdn.com/playlist/vid/D5605AQEgieYuRORKWw/mp4-640p-30fp-crf28/0/1691558979300?e=1693706400&v=beta&t=1MKd4EphR88b1WmyAVOFaGIaUHy7-Hy14avqvj-jp28</span></p>
+                <!-- https://dms-exp3.licdn.com/playlist/vid/D5605AQEgieYuRORKWw/mp4-640p-30fp-crf28/0/1691558979300?e=1693706400&amp;v=beta&amp;t=1MKd4EphR88b1WmyAVOFaGIaUHy7-Hy14avqvj-jp28 -->
+        </div>
 
-    <form class="audio_url_submission" id="videoURLForm">
-        <label for="url">Paste Video URL</label>
-        <input type="url" name="audio_url" id="videoURLInput" placeholder="https://example.mp4" pattern="https://.*" class="inputProcess" />
-        <input class="bold process" id="videoURLSubmit" type="submit" value="Process">
-    </form>
-    <p id="converID"></p>
-    <div class="output">
-        <div class="output_tabs">
-            <button class="tablinks" onclick="changeTabs(event, 'summarize_tab'); setsummaryInterval()">Summarize</button>
-            <button class="tablinks" onclick="changeTabs(event, 'key_points_tab'); setmessageInterval()">Key Points</button>
-            <button class="tablinks" onclick="changeTabs(event, 'key_topics_tab'); settopicInterval()">Key Topics w/ Sentiment</button>
-            <button class="tablinks" onclick="changeTabs(event, 'questions_tab'); setquestionInterval()">Questions Asked</button>
-        </div>
-        
-        <div id="summarize_tab" class="output_tab">
-            <h3>Summarize</h3>
-            <div class="loader" id="loadersummerize" style="display:none;"></div>
-            <p id="summarize_output"></p>
-        </div>
-        
-        <div id="key_points_tab" class="output_tab">
-            <h3>Key Points</h3>
-            <div class="loader" id="loaderkeypoint" style="display:none;"></div>
-            <ul id="key_points_output"></ul>
-        </div>
-        
-        <div id="key_topics_tab" class="output_tab">
-            <h3>Key Topics with Sentiment</h3>
-            <div class="loader" id="loaderkeytopic" style="display:none;"></div>
-            <ul class="topic" id="topic">
-                
-            </ul>
-        </div>
-        
-        <div id="questions_tab" class="output_tab">
-            <h3>Questions</h3>
-            <div class="loader" id="loaderquestion" style="display:none;"></div>
-            <p id="question"></p>
+        <!--Input URL-->
+        <form class="audio_url_submission" id="videoURLForm">
+            <label for="url">Paste Video URL</label>
+            <input type="url" name="audio_url" id="videoURLInput" placeholder="https://example.mp4" pattern="https://.*" class="inputProcess" />
+            <input class="bold process" id="videoURLSubmit" type="submit" value="Process">
+        </form>
+        <p id="converID"></p>
+
+        <!--Output Summarized Data-->
+        <div class="output">
+            <div class="output_tabs">
+                <button class="tablinks" onclick="changeTabs(event, 'summarize_tab'); setsummaryInterval()">Summarize</button>
+                <button class="tablinks" onclick="changeTabs(event, 'key_points_tab'); setmessageInterval()">Key Points</button>
+                <button class="tablinks" onclick="changeTabs(event, 'key_topics_tab'); settopicInterval()">Key Topics w/ Sentiment Analysis</button>
+                <button class="tablinks" onclick="changeTabs(event, 'questions_tab'); setquestionInterval()">Questions Asked</button>
+            </div>
+            
+            <div id="summarize_tab" class="output_tab">
+                <h3>Summarize</h3>
+                <div class="loader" id="loadersummerize" style="display:none;"></div>
+                <p id="summarize_output"></p>
+            </div>
+            
+            <div id="key_points_tab" class="output_tab">
+                <h3>Key Points</h3>
+                <div class="loader" id="loaderkeypoint" style="display:none;"></div>
+                <ul id="key_points_output"></ul>
+            </div>
+            
+            <div id="key_topics_tab" class="output_tab">
+                <h3>Key Topics with Sentiment</h3>
+                <div class="loader" id="loaderkeytopic" style="display:none;"></div>
+                <ul class="topic" id="topic">
+                    
+                </ul>
+            </div>
+            
+            <div id="questions_tab" class="output_tab">
+                <h3>Questions</h3>
+                <div class="loader" id="loaderquestion" style="display:none;"></div>
+                <p id="question"></p>
+            </div>
         </div>
     </div>
-</div>
     <script src="script.js"></script>
 </body>
 </html>
