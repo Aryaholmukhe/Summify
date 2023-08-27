@@ -2,11 +2,11 @@
 
 Unlocking knowledge from audio and visual content: Revolutionizing information extraction and synthesis.
 
-## Inspiration
+## Inspiration 📜
 
 Through the first-hand pain of a student sitting through long audio and video contents for things like school assignments, podcast analysis, making meeting minutes for recordings of long online meetings, and other such time-consuming tasks, we got our inspiration to innovate a solution through this project. Automating the process is essential as students have limited time, so every minute is crucial to be efficient. At the same time, we realized that this went far beyond us. It would also be beneficial to 432 million adults and 34 million children around the globe with hearing loss by having a tool to get visual information extracted from audio resources, in a quick manner. By unlocking knowledge from audio and visual contents, our goal is to revolutionize information extraction and synthesis.
 
-## What it does
+## What it does 💻
 
 - In today's fast-paced world, whilst information is abundant, time is limited. Students and professionals often find themselves sifting through lengthy audio and video content like podcasts, interviews, and online meetings to extract key ideas and topics. This is a very time-consuming process which is also inefficient.
 
@@ -14,7 +14,7 @@ Through the first-hand pain of a student sitting through long audio and video co
 
 - Our tech solution addresses this issue head-on. Summify aims to help users effectively work with audio and video content through automated summarization, key points identification, topic extraction, and sentimental analysis. Summify’s audio summarization feature supports various formats such as mp3, wav, amr, aac, ac3, aiff, flac, ogg, opus, wma, and m4a. Summify’s video summarization feature supports mp4.
 
-## How we built it
+## How we built it ⚙️
 - Since our team consisted of mostly beginners in web development, we decided to use pure JavaScript/HTML/CSS for our project so that we were all able to work on the solution.
 
 - Summify was built using various softwares found through our own research that include:
