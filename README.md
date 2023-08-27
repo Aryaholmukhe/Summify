@@ -28,7 +28,7 @@ Summify’s video summarization feature supports mp4.
 
 - In the beginning stages of building Summify, we were having trouble fetching information from API due to our inexperience in API development and found everything quite complicated
 - We needed to work on resolving authentication issues related to API configuration
-- Due to this, while we were still integrating it in our website, we created a backup plan with whisperAI (click here to check it out!) in python. 
+- Due to this, while we were still integrating it in our website, we created a backup plan with whisperAI [click here to check it out!](https://colab.research.google.com/drive/11DnoUk7AR647bQIFm4f6jRc0YxfoyET-?usp=sharing) in python. 
 - We had issues of the API slowing down as we developed, due to which we had to add a loader. Getting the job status and integrating the loader took a while.
 
 ## Accomplishments that we're proud of
